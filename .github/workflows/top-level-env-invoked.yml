@@ -1,0 +1,22 @@
+on:
+  workflow_call:
+
+env:
+  ENVY_A: vvalue_a
+  ENVY_B: vvalue_b
+  ENVY_C: vvalue_c
+  ENVIOUS_A: invoke_a
+  ENVIOUS_B: invoke_b
+  ENVIOUS_C: invoke_c
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+      env_str=$(cat <<EOF
+        ${{ toJSON(env) }}
+      EOF
+      )
+
+      echo "${env_str}" | jq -r 'to_entries | .[] | [.key, .value] | join("=")'

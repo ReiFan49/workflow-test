@@ -1,0 +1,11 @@
+on:
+  push:
+
+env:
+  ENVIOUS_A: value_a
+  ENVIOUS_B: value_bb
+  ENVIOUS_C: value_ccc
+
+job:
+  invoke:
+    uses: .github/workflows/top-level-env-invoked.yml
