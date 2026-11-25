@@ -8,8 +8,15 @@ env:
   ENVIOUS_A: invoke_a
   ENVIOUS_B: invoke_b
   ENVIOUS_C: invoke_c
+  ACTION_CHECKOUT: actions/checkout@v7
 
 jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: ${{ env.ACTION_CHECKOUT }}
+    - run: cat README.md
   execute:
     runs-on: ubuntu-latest
     steps:
