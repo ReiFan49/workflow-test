@@ -6,6 +6,6 @@ env:
   ENVIOUS_B: value_bb
   ENVIOUS_C: value_ccc
 
-job:
+jobs:
   invoke:
     uses: .github/workflows/top-level-env-invoked.yml

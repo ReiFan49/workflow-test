@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-      env_str=$(cat <<EOF
-        ${{ toJSON(env) }}
-      EOF
-      )
+        env_str=$(cat <<EOF
+          ${{ toJSON(env) }}
+        EOF
+        )
 
-      echo "${env_str}" | jq -r 'to_entries | .[] | [.key, .value] | join("=")'
+        echo "${env_str}" | jq -r 'to_entries | .[] | [.key, .value] | join("=")'
