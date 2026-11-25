@@ -5,6 +5,7 @@ env:
   ENVIOUS_A: value_a
   ENVIOUS_B: value_bb
   ENVIOUS_C: value_ccc
+  ENVIOUS_X: extra_envy
 
 jobs:
   invoke:
