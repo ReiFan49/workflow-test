@@ -8,4 +8,4 @@ env:
 
 jobs:
   invoke:
-    uses: $/.github/workflows/top-level-env-invoked.yml@master
+    uses: ./.github/workflows/top-level-env-invoked.yml@master
